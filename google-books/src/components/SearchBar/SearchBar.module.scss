@@ -1,0 +1,62 @@
+@use "./../../variables/palette";
+
+
+
+.SearchBar {
+	margin-bottom: 40px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+
+	&__Input {
+		border-radius: 0;
+		border-top-left-radius: 20px;
+		border-bottom-left-radius: 20px;
+		border-style: hidden;
+		outline: none;
+		height: 1.5rem;
+		padding: 5px;
+		margin: 0px;
+		font-size: 1rem;
+		background-color: rgba(palette.$blue, 0.5);
+		text-align: center;
+		color: palette.$light-grey;
+
+		&:focus {
+			outline: none;
+
+			&::placeholder {
+				color: transparent;
+			}
+		}
+
+		&::placeholder {
+			color: rgba(rgba(palette.$light-grey, 1), 0.8);
+			text-align: center;
+			transition: 0.2s;
+		}
+	}
+
+	&__Button {
+		border-radius: 0;
+		border-top-right-radius: 20px;
+		border-bottom-right-radius: 20px;
+		border: none;
+
+		height: 34px;
+		margin: 0px;
+
+		background: linear-gradient(
+			270deg,
+			palette.$blue,
+			rgba(palette.$blue, 0.5)
+		);
+
+		color: rgba(palette.$light-grey, 1);
+		cursor: pointer;
+
+		&:active {
+			background-color: palette.$light-grey;
+		}
+	}
+}
