@@ -7,14 +7,8 @@ import Footer from "./components/Footer/Footer";
 
 const App = () => {
 	const [search, setSearch] = useState("");
-	const [error, setError] = useState(null);
-
 
 	const handleSubmit = (newSearch) => {
-		setError(null);
-		// if (newSearch === "") {
-		// 	setError(error);
-		// }
 		setSearch(newSearch);
 	};
 
@@ -24,7 +18,7 @@ const App = () => {
 			<div className={styles.App}>
 			<Header/>
 			<SearchBar onSubmit={handleSubmit} />
-			{error ? <Error error={error} />: <BooksLoader searchTerm={search} />}
+		   <BooksLoader searchTerm={search} />
 		</div>
 		<Footer/>
 		</>

@@ -16,8 +16,10 @@ const BooksLoader = ({ searchTerm }) => {
 	useEffect(() => {
 		setError(null);
 		setBooks([]);
-		setLoading(true);
-		getBooksBySearch(searchTerm)
+	
+		if(searchTerm){
+			setLoading(true);
+			getBooksBySearch(searchTerm)
 			.then((bookArr) => {
 				setLoading(false);
 				setBooks(bookArr);
@@ -26,6 +28,9 @@ const BooksLoader = ({ searchTerm }) => {
 				setError(err);
 			})
 			.finally(() => setLoading(false));
+
+		}
+	
 	}, [searchTerm]);
 
 

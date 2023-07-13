@@ -17,8 +17,6 @@ const SearchBar = ({ onSubmit }) => {
 	const handleSubmit = (event) => {
 		const form = document.getElementById("searchForm");
 		event.preventDefault();
-		// const formData = new FormData(event.target);
-		// const searchTerm = formData.get("search");
 		onSubmit(inputValue);
 		form.reset();
 		setInputValue("");
@@ -35,6 +33,7 @@ const SearchBar = ({ onSubmit }) => {
 				className={styles.SearchBar__Input}
 				onChange={handleChange}
 				value={inputValue}
+				required
 			/>
 			
 			<button type="submit"className={styles.SearchBar__Button}>

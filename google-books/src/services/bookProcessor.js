@@ -1,5 +1,7 @@
 export const bookProcessor = (book) => {
+
 	const title = book.volumeInfo.title ? book.volumeInfo.title : "No Title";
+	if (title.length > 200) { const indexToTrim = title.indexOf(" ", 50); title = title.slice(0, indexToTrim) + "..."; }
 	const authors = book.volumeInfo.authors
 		? book.volumeInfo.authors.join(", ")
 		: "Unknown Author";
