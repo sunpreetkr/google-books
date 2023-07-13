@@ -1,0 +1,22 @@
+@use "./../../variables/responsive";
+
+
+.BookList {
+	&__Grid {
+	padding: 0px 10px 20px 10px;
+	display: grid;
+	row-gap: 30px;
+	justify-content: center;
+	justify-items: center;
+	align-items: center;
+	column-gap: 20px;
+	grid-template-columns: repeat(auto-fit, 154px);
+	grid-auto-rows: 246px;
+
+	@include responsive.md-up {
+		column-gap: 10px;
+		grid-template-columns: repeat(auto-fit, 450px);
+		grid-auto-rows: 246px;
+	}
+}
+}
