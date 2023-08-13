@@ -1,0 +1,6 @@
+@use "./variables/palette";
+.App {
+	min-width: 100vw;
+	min-height: 90vh;
+	background-color: palette.$light-grey;
+}

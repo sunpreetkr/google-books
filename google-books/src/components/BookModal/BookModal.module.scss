@@ -1,0 +1,85 @@
+@import "./../../variables/palette";
+@import "./../../variables/responsive";
+
+.Modal{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.6);
+	z-index: 2;
+
+	&__Content {
+		background: $white;
+		color: $black;
+		width: 60vw;
+		height: 80vh;
+		padding: 2%;
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+		align-items: center;
+		overflow-y: scroll;
+		text-align: center;
+
+		&__Info {
+			margin-top: 3%;
+			padding-bottom: 2%;
+			font-weight: bold;
+		}
+
+		&__Img {
+			width: 150px;
+			height: 200px;
+			margin-top: 270px;
+
+		}
+
+		&__Btn {
+			border: none;
+			outline: none;
+			width: 120px;
+			background-color: $blue;
+			color: $white;
+			margin-top: 20px;
+			padding: 10px;
+		}
+	}
+
+	@media (min-width: ($phone + 1)) and (max-width: $pc) {
+		&__Inner {
+			max-width: 500px;
+		}
+	}
+
+	@media (max-width: $phone) {
+		&__Inner {
+			max-width: 90vw;
+			max-height: 70vh;
+			font-size: 12px;
+		}
+	}
+}
+
+.close {
+  position: absolute;
+  top: 50px;
+  right: 290px;
+  cursor: pointer;
+  font-size: 2rem;
+	color: $green;
+	transition: 0.2s;
+}
+
+
+
+.close:hover,
+.close:focus {
+	color: $black;
+	text-decoration: none;
+	cursor: pointer;
+}

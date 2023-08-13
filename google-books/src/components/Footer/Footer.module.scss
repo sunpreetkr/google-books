@@ -1,0 +1,15 @@
+@use "./../../variables/typography";
+@import "./../../variables/palette";
+
+.Footer {
+	background-color: $light-grey;
+	padding: 20px;
+
+
+	 p {
+		@extend %wix-font;
+		color: $blue;
+		text-align: center;
+		font-weight: 300;
+	}
+}

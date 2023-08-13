@@ -1,0 +1,64 @@
+@use "./../../variables/typography";
+@use "./../../variables/responsive";
+@use "./../../variables/palette";
+@import "./../../variables/responsive";
+
+
+
+*{
+	margin: 0;
+	padding: 0;
+}
+.Header {
+	@extend %wix-font;
+	width: 100vw;
+	height: 50vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-top: 2%;
+	background-color: palette.$blue;
+	color: palette.$light-grey;
+	text-align: center;
+	margin-bottom: 5%;
+
+	 h1 {
+		font-size: 65px;
+		margin-top: 8%;
+		margin-bottom: 1%;
+		font-weight: 700;
+	}
+
+	 p {
+		font-size: 21px;
+	}
+
+	@media (min-width: ($phone + 1)) and (max-width: $tablet) {
+		h1 {
+			margin-top: 20%;
+		}
+
+		 p {
+			margin-top: 2%;
+			font-size: 20px;
+		}
+	}
+
+	@include responsive.sm-down  {
+		padding: 0;
+
+		 h1 {
+			font-size: 35px;
+		  margin-top: 25%;
+			padding-top: 20px;
+		}
+
+		 p {
+			margin-top: 4%;
+			font-size: 16px;
+		
+		}
+
+	}
+}
